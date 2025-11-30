@@ -389,3 +389,12 @@ summary::after {
 details[open] summary::after {
   transform: rotate(90deg);
 }
+
+/* Active navbar link */
+.navbar a.active {
+  background-color: #4FB319;  /* green background */
+  color: #0A0A0A;             /* dark text for contrast */
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+

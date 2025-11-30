@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" class="HTMLBGColor">
-  <link href="style.css" rel="stylesheet">
-          <nav style="text-align: center;">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <body>
-      <h2>Introduction of who I am:</h2>
-      <div class="fontThis">
-      <p> I am Chaz Vincent Aurin and i've been studing how to code from HTML ever since Grade 7.</p>
-      <p>Since then I've grown my foundation for coding and have been  open for more coding projects</p>
-      </div>
-      <h3>My Goals in Developing my Skills in Coding</h3>
-      <ul>
-        <li>Being able to read and troubleshoot error codes</li>
-        <li>Managing my own Tech Company with a full team</li>
-        <li>Passive income from the projects I've sold to companies</li>
-        <li>Make my own personal AI like Jarvis from Iron Man</li>
-      </ul>
-      <h3>My Experience In Coding:</h3>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Managing Minecraft Servers on my computer</li>
-      </ul> <br>
+  <link href="assets/style.css" rel="stylesheet">
+<nav class="navbar">
+  <div class="brand">
+    Derp28
+    <div class="subtitle">Projects</div>
+  </div>
 
-      <h3>My Hobbies:</h3>
-      <ul>
-        <li>Manga, Manhwa, Manhua</li>
-        <li>Anime</li>
-        <li>Video Games</li>
-        <li>Singing</li>
-        <li>Working Out</li>
-      </ul>
+  <div class="nav-links">
+    <a href="index.html">Home</a> 
+    <a href="about.html" class="active">About</a> 
+    <a href="contact.html">Contact</a> 
+    <a href="projects.html">Projects</a>
+    <a href="workwork.html">Experience</a>
+  </div>
+</nav>
+    <body>
+      <head>
+    <h1 style="text-align: center;">More Information About Me!</h1>
+  </head>
+  <body>
+    <div id="slides">
+      
+      <!-- Slide 1 -->
+<div class="slide">
+  <div class="bio-container">
+    
+    <!-- Summary + Details -->
+     <div style="flex: 1;">
+    <details class="bio-details">
+      <summary><h2>My Biography</h2></summary>
+      <div class="fontThis">
+        <p>Throughout my high school years, I consistently earned merit awards from Grade 7 to Grade 12, with the sole exception of Grade 9. That year was particularly challenging as I was still adjusting to the sudden shift brought about by the pandemic, and my performance in ESP (Edukasyon sa Pagpapakatao) slightly lowered my overall average, breaking my line of 90. Despite that setback, my academic journey remained marked by dedication and resilience.</p>
+        <p>Beyond academics, I often took on leadership roles, guiding my peers in various activities and projects. These experiences taught me how to manage diverse groups of people, encourage collaboration, and create an environment where individuals could freely apply and develop their skills. Leading others not only strengthened my ability to organise and communicate effectively but also helped me grow into someone who values both teamwork and personal initiative.</p>
+      </div>
+    </details>
+    </div>
+
+    <!-- Image -->
+    <img src="assets/photos/WUHWUH.jpg" class="bio-image" alt="Biography Image">
+    
+  </div>
+</div>
+
+    <div class="slide" style="display:none;">
+      <h1>More about me!</h1>
+      <p style="text-align: justify;">Hello Hallo! I’m Chaz Vincent Aurin, a Bachelor of Computer Science student from CIIT. 
+        I’ve been a fan of the digital space since my early introduction to anime during childhood, and I’m passionate about how my childhood dreams can blossom into ideas that help the world in my own way. </p>
+      <p style="text-align: justify;">At CIIT, I’ve been learning how to integrate my ideas into practical applications, grounding my idealistic desire to help others in a more realistic approach. 
+        I find satisfaction in mastering the fundamentals required for my coding projects, while still having the freedom to incorporate my own creativity and innovation into them.</p>
+    </div>
+
+
+
+      <!-- Slide 3 -->
+      <div class="slide" style="display:none;">
+        <h2>Skills Inventory</h2>
+        <ul style="text-align: left; margin-left: 40px;">
+          <li><b>Personal:</b><br>
+            My willingness to learn to improve myself and the ability to lead my peers through insightful decision-making.
+          </li> 
+          <br>
+          <li><b>Interpersonal:</b><br>
+            My proactiveness in collaboration with my peers, and also being able to handle diplomacy, where I've settled many arguments.
+          </li>
+          <br>
+
+          <li><b>Professional:</b><br>
+            Integrity with my work, punctuality to my responsibilities, and soft skills to help people.
+          </li>
+          <br>
+        </ul>
+      </div>
+          <div class="fixed-buttons">
+      <button onclick="nextSlide()">Next</button>
+      <button onclick="prevSlide()">Previous</button>
+    </div>
 
     </body>
+    <script src="assets/script.js"></script>
 </html>

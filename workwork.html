@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link href="assets/style.css" rel="stylesheet">
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .image-container img {
+      display: block;
+      width: 300px;
+      height: auto;
+    }
+
+    /* Overlay text (hidden by default) */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #f5f5f5;
+      font-size: 20px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    /* Show text when hovering */
+    .image-container:hover .overlay-text {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">
+      Derp28
+      <div class="subtitle">Projects</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a> 
+      <a href="about.html">About</a> 
+      <a href="contact.html">Contact</a> 
+      <a href="projects.html">Projects</a>
+      <a href="workwork.html" class="active">Experience</a>
+      <a href="certificates.html">Certificates</a>
+    </div>
+  </nav>
+
+  <h1 style="text-align: center;">My Personal Experience!</h1>
+
+  <div id="slides">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div>
+          <h1>A Lead in a game called Crafting Chemistry</h1>
+          <p>It's a game that was for a school project. I was one of the people who guided this game's progress and also one of the people who made the website for the game itself</p>
+          
+          <!-- Clickable image with hover text -->
+          <a href="https://zalnimations.itch.io/crafting-chemistry" target="_blank">
+            <div class="image-container">
+              <img src="assets/photos/craftingchemistry.png" alt="Link to the Game">
+              <div class="overlay-text">To the game!</div>
+            </div>
+          </a>
+
+          <a href="https://apchazvincentaurin.wixsite.com/my-site-2" target="_blank">
+            <div class="image-container">
+              <img src="assets/photos/image(1).png" alt="Link to the website" width="500" height="500">
+              <div class="overlay-text">To the website!</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="display: none;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div>
+          <h1>Worked as a Waiter for 3 months</h1>
+          <p>I worked for my godmother in a Japanese restaurant which gave me more experience and insight on what a professional workplace should be like and how I can apply it to my studies</p>
+        </div>
+
+        <img src="assets/photos/workexperience.jpg" width="500" height="500" alt="Work experience as a waiter">
+      </div>
+    </div>
+  </div> <!-- ✅ properly closes #slides -->
+
+  <div class="fixed-buttons">
+    <button onclick="nextSlide()">Next</button>
+    <button onclick="prevSlide()">Previous</button>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

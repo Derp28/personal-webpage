@@ -1,32 +1,133 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link href="assets/style.css" rel="stylesheet">
 
-    <html lang = "en">
-            <nav style="text-align: center;">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        </nav>
-        <body>
-            <h1>Ways to Contact Me:</h1>
-            <p>Email: chazvaurin0323@gmail.com</p>
-            <p>Github: <a href="https://github.com/Derp28">https://github.com/Derp28</a></p>
-            <p>Phone Number: 09266602139</p>
-            <h2>Contact Form</h2>
-
-            <form>
-                <label>First Name:</label><br>
-                <textarea rows="1" cols="20">"Juan"</textarea><br>
-                <label>Last Name:</label><br>
-                <textarea rows="1" cols="20">"Dela Cruz"</textarea><br>
-                <label>Contact Number:</label><br>
-                <textarea rows="1" cols="20">"09XXXXXXXXX"</textarea><br>
-                <label>Email Adress:</label><br>
-                <textarea rows="1" cols="20">"example@example.com"</textarea><br>
-                <label>Reason for Contact:</label><br>
-                <input type="text"><br><br>
-                <input type="submit" value="Submit Form">   
-            </form>
-        </body>
+  <style>
+    /* Apply font globally */
+    body {
+      font-family: "IBM Plex Mono", SFMono-Regular, Menlo, Consolas, monospace;
+      background-color: #0A0A0A; /* dark background */
+      color: #F5F5F5; /* light text */
+      margin: 0;
+      padding: 0;
+    }
 
 
-    </html>
+    .navbar a:hover {
+      color: #4FB319;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #4FB319;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .cards .card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      height: 100px;
+      width: 250px;
+      border-radius: 10px;
+      color: #F5F5F5;
+      cursor: pointer;
+      transition: 400ms;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    .cards .card p.tip {
+      font-size: 1.2em;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .cards .card p.second-text {
+      font-size: 0.9em;
+      margin: 5px 0 0;
+    }
+
+    .cards .card:hover {
+      transform: scale(1.05);
+      border: 2px solid #FFD700;
+    }
+
+    .cards:hover > .card:not(:hover) {
+      filter: blur(3px);
+      transform: scale(0.95);
+    }
+
+    /* Palette applied */
+    .cards .red {
+      background-color: #FFD700; /* gold */
+      color: #0A0A0A;
+    }
+
+    .cards .blue {
+      background-color: #4FB319; /* green */
+    }
+
+    .cards .green {
+      background-color: #0A0A0A;
+      border: 2px solid #4FB319;
+    }
+
+    .cards .card a {
+      color: #F5F5F5;
+      text-decoration: none;
+    }
+
+    .cards .card a:hover {
+      color: #FFD700;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+ <nav class="navbar">
+  <div class="brand">
+    Derp28
+    <div class="subtitle">Projects</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a> 
+    <a href="about.html">About</a> 
+    <a href="contact.html" class="active">Contact</a> 
+    <a href="projects.html">Projects</a>
+    <a href="workwork.html">Experience</a>
+    <a href="certificates.html">Certificates</a>
+  </div>
+</nav>
+
+  <h1>Ways to Contact Me:</h1>
+
+  <div class="cards" style="font-size: large;">
+    <div class="card red">
+      <p class="tip">Email</p>
+      <p class="second-text">chazvaurin0323@gmail.com</p>
+    </div>
+    <div class="card blue">
+      <p class="tip">Github</p>
+      <p class="second-text"><a href="https://github.com/Derp28">github.com/Derp28</a></p>
+    </div>
+    <div class="card green">
+      <p class="tip">Discord</p>
+      <p class="second-text">derpy_111</p>
+    </div>
+  </div>
+</body>
+</html>

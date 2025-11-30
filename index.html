@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <style>
-      
-    </style>
+  <link href="assets/style.css" rel="stylesheet">
+<nav class="navbar">
+  <div class="brand">
+    Derp28
+    <div class="subtitle">Projects</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a> 
+    <a href="about.html">About</a> 
+    <a href="contact.html">Contact</a> 
+    <a href="projects.html">Projects</a>
+    <a href="workwork.html">Experience</a>
+    <a href="certificates.html">Certificates</a>
+  </div>
+</nav>
+
     <head>
-        <h1 style="text-align: center;"> Welcome to Chaz's Portfolio</h1>
+        <h1 style="text-align: center;"> Welcome to My Personal Portfolio</h1>
     </head>
-    <nav style = "text-align: center;">
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a> 
-    </nav>
     <body>
-    <h1>I am Chaz Vincent Aurin</h1>
-    <img src="assets/photos/yupthatsme.jpeg" width="500px" height="500px">
-    <h2>I am a Bachelor in Computer Science college student studying in <b>CIIT</b></h2>
-    </body> 
+      <div id="slides">
+      <div class="slide">
+<div style="display: flex; align-items: center; gap: 20px;">
+  <div>
+    <h1>I am <b>Chaz Vincent Aurin</b></h1>
+    <h2>I am a Bachelor in Computer Science student studying in <b>CIIT</b></h2>
+  </div>
+  
+  <img src="assets/photos/Homepage.jpg" width="500px" height="500px">
+</div>
+
+    </div>
+
+    <div class="slide" style="display: none;">
+      <h1 id="myText" class="imgonnatouchyou">A sentence I live by:<br>(Click Me!)
+      </h1>
+
+    </div>
+    <div class="slide" style="display: none;">
+      <h1>More Information in my <a href="about.html">About</a> Section!</h1>
+    </div>
+    </div>
+<div class="fixed-buttons">
+  <button onclick="nextSlide()">Next</button>
+  <button onclick="prevSlide()">Previous</button>
+</div>
+  <script>
+        let current = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+
+      slides.forEach(slide => slide.style.display = "none");
+      slides[index].style.display = "block";
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+let clickCount = 0;
+const text = document.getElementById("myText");
+
+text.addEventListener("click", () => {
+  clickCount++;
+
+  if (clickCount === 1) {
+    text.textContent = "“Being able to rise from defeat is victory itself.”";
+  } else if (clickCount === 2) {
+    text.textContent = "Back then, I’ve always feared not being able to achieve what I can, and focused on brooding on what could’ve been until I realised something on my path. That I should be learning from my mistakes, and keep moving forward without losing sight of my goals.";
+  } else if (clickCount === 3) {
+    text.textContent = "A sentence I live by:";
+    clickCount = 0; // reset counter
+  }
+});
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+
 </html>

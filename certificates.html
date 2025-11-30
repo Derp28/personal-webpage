@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <link href="assets/style.css" rel="stylesheet">
+
+<nav class="navbar">
+  <div class="brand">
+    Derp28
+    <div class="subtitle">Projects</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a> 
+    <a href="about.html">About</a> 
+    <a href="contact.html">Contact</a> 
+    <a href="projects.html">Projects</a>
+    <a href="workwork.html">Experience</a>
+    <a href="certificates.html" class="active">Certificates</a>
+  </div>
+</nav>
+
+<head>
+<h1 style="text-align: center;">Awards and Certificates I've gotten!</h1>
+</head>
+<body>
+  <div id="slides">
+    <div class="slide">
+      <h1>Merit Awards from my JHS to SHS:</h1>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card__content">
+            <p class="card__title">Merit Award in Grade 8</p>
+            </div>
+          <img src="assets/photos/certificate3.jpg" alt="Merit Award in Grade 8" class="card__image" onclick="openModal(this.src)">
+        </div>
+
+
+        <div class="card">
+          <div class="card__content">
+            <p class="card__title">Merit Award in Grade 11</p>
+            <p class="card__description">          
+            </div>
+          <img src="assets/photos/certificate2.jpg" alt="Merit Award in Grade 11" class="card__image" onclick="openModal(this.src)">
+        </div>
+
+                <div class="card">
+          <div class="card__content">
+            <p class="card__title">Merit Award in Grade 12</p>
+        
+        </div>
+          <img src="assets/photos/certificate1.jpg" alt="Merit Award in Grade 12" class="card__image" onclick="openModal(this.src)">
+        </div>
+
+
+      </div>
+    </div>
+
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal__close" onclick="closeModal(event)">&times;</span>
+    <img class="modal__content" id="modalImage" src="">
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    function openModal(src) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modalImg.src = src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal(event) {
+      if (event) event.stopPropagation();
+      const modal = document.getElementById('imageModal');
+      modal.style.display = 'none';
+    }
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      if (n >= slides.length) {
+        currentSlide = 0;
+      }
+      if (n < 0) {
+        currentSlide = slides.length - 1;
+      }
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[currentSlide].style.display = 'block';
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+
+    // Initialize first slide
+    showSlide(currentSlide);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

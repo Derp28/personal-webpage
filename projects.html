@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <link href="assets/style.css" rel="stylesheet">
+
+<nav class="navbar">
+  <div class="brand">
+    Derp28
+    <div class="subtitle">Projects</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a> 
+    <a href="about.html">About</a> 
+    <a href="contact.html">Contact</a> 
+    <a href="projects.html" class="active">Projects</a>
+    <a href="workwork.html">Experience</a>
+    <a href="certificates.html">Certificates</a>
+  </div>
+</nav>
+
+<head>
+<h1 style="text-align: center;">Projects that I've involved myself in!</h1>
+</head>
+<body>
+  <div id="slides">
+    <div class="slide">
+      <h1>Artworks and Posters I've made:</h1>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card__content">
+            <p class="card__title">Art Project from 2021</p>
+            <p class="card__description">Even if it was from a long time ago, I look back on this artwork fondly because it made me appreciate my own works even more than I thought I would</p>
+          </div>
+          <img src="assets/photos/dogedoge.png" alt="Art Project from 2021" class="card__image" onclick="openModal(this.src)">
+        </div>
+        <div class="card">
+          <div class="card__content">
+            <p class="card__title">POV: It's me Poster</p>
+            <p class="card__description">This is a poster that represents what I stand for and what my moral compass is.</p>
+          </div>
+          <img src="assets/photos/Poster for Self Development.png" alt="POV: It's me Poster" class="card__image" onclick="openModal(this.src)">
+        </div>
+      </div>
+    </div>
+    
+    <div class="slide" style="display:none;">
+      <h1>Coding Projects I've made:</h1>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card__content">
+            <p class="card__title">Banking System on C++</p>
+            <p class="card__description">This is banking system that is access through a pin and was a project that helped me understand more about C++</p>
+          </div>
+          <img src="assets/photos/codingbruh.png" alt="Banking System" class="card__image" onclick="openModal(this.src)">
+        </div>
+        <div class="card">
+          <div class="card__content">
+            <p class="card__title">Payroll System</p>
+            <p class="card__description">A java project that involves a payroll system for employees and commends employees that do well</p>
+          </div>
+          <img src="assets/photos/javabruh.png" alt="Payroll System" class="card__image" onclick="openModal(this.src)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal__close" onclick="closeModal(event)">&times;</span>
+    <img class="modal__content" id="modalImage" src="">
+  </div>
+
+  <div class="fixed-buttons">
+    <button onclick="nextSlide()">Next</button>
+    <button onclick="prevSlide()">Previous</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    function openModal(src) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modalImg.src = src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal(event) {
+      if (event) event.stopPropagation();
+      const modal = document.getElementById('imageModal');
+      modal.style.display = 'none';
+    }
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      if (n >= slides.length) {
+        currentSlide = 0;
+      }
+      if (n < 0) {
+        currentSlide = slides.length - 1;
+      }
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[currentSlide].style.display = 'block';
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+
+    // Initialize first slide
+    showSlide(currentSlide);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
