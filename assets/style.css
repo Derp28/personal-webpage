@@ -1,10 +1,391 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
-    .fontThis{
-      font-family: "IBM Plex Mono", SFMono-Regular, Menlo, Consolas, monospace;
-      color:#F5F5F5;
-    }
-.HTMLBGColor{
-    background-color: #0A0A0A;
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0A0A0A; /* dark background */
+  font-family: "IBM Plex Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  color: #F5F5F5; /* light text */
 }
-/*color pallette{  #F5F5F5, #FFD700, #4FB319, #0A0A0A*/
+
+.imgonnatouchyou{
+  cursor: pointer;
+}
+/* Header */
+h1, h2, h3 {
+  color: #4FB319; /* main green for headings */
+  margin-top: 20px;
+}
+
+/* Navbar */
+:root {
+  --nav-padding: 15px 30px;
+}
+
+nav, .navbar {
+  background-color: #0A0A0A;
+  padding: var(--nav-padding);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a, .navbar a {
+  color: #F5F5F5;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover, .navbar a:hover {
+  color: #4FB319; /* green hover accent */
+  transform: scale(1.05);
+}
+
+nav a::after, .navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #4FB319; /* underline accent in green */
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after, .navbar a:hover::after {
+  width: 100%;
+}
+
+/* Slides container */
+#slides {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1a1a1a; /* slightly lighter dark background */
+  border: 2px solid #4FB319; /* gold border for emphasis */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(245, 245, 245, 0.1);
+}
+
+/* Individual slides */
+.slide {
+  text-align: center;
+}
+
+.slide h1, .slide h2, .slide h3 {
+  color: #4FB319; /* green headings */
+}
+
+.slide p {
+  line-height: 1.6;
+  margin: 15px 0;
+  color: #F5F5F5; /* light text */
+}
+
+/* Compact Image styling */
+.slide img {
+  border-radius: 10px;
+  border: 3px solid #4FB319; /* green border */
+  margin: 20px 0;
+  max-width: 300px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(245, 245, 245, 0.2);
+}
+
+/* Fixed Buttons at bottom-right */
+.fixed-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+  animation: fadeSlideUp 0.6s ease;
+}
+
+.fixed-buttons button {
+  background-color: #FFD700; /* gold base for visibility */
+  color: #0A0A0A;            /* dark text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.fixed-buttons button:hover {
+  background-color: #4FB319; /* green hover */
+  color: #F5F5F5;            /* light text */
+  transform: translateY(-2px);
+}
+
+/* Floating animation */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #slides {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  nav, .navbar {
+    font-size: 14px;
+  }
+
+  .fixed-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .slide img {
+    max-width: 200px; /* smaller on mobile */
+  }
+}
+
+/* The flip box container */
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #F5F5F5; /* light neutral border */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* Inner container */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip effect */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back sides */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Front side */
+.flip-box-front {
+  background-color: #FFD700; /* gold */
+  color: #0A0A0A;            /* dark text */
+}
+
+/* Back side */
+.flip-box-back {
+  background-color: #4FB319; /* vibrant green */
+  color: #F5F5F5;            /* light text */
+  transform: rotateY(180deg);
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+.card {
+  position: relative;
+  width: 300px;
+  min-height: 200px;
+  background-color: #0A0A0A; /* dark background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px #4FB31980; /* subtle green glow */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(79, 179, 25, 0.4); /* green hover glow */
+}
+
+.card__content {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #0A0A0A; /* keep dark background */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #FFD700; /* gold title */
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #F5F5F5; /* light text for readability */
+  line-height: 1.4;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__image {
+  opacity: 1;
+}
+
+.card:hover .card__content {
+  opacity: 0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal__content {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  animation: zoomIn 0.3s ease;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #F5F5F5;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal__close:hover {
+  color: #4FB319;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* brand on left, links on right */
+  align-items: center;
+  padding: 10px 20px;
+  padding-right: 3em;
+  border-bottom: 4px solid #4FB319;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brand .subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  border-top: 1px solid #000;
+  margin-top: 3px;
+  padding-top: 2px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.bio-container {
+  display: flex;
+  justify-content: space-between; /* text left, image right */
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.bio-details {
+  flex: 1; /* text takes available space */
+}
+
+.bio-image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover; /* keeps proportions nicely */
+  margin-left: auto; /* forces image to the far right */
+}
+
+ summary {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+summary h3 {
+  margin: 0; /* remove extra spacing */
+}
+
+summary::after {
+  content: "▶"; /* closed state */
+  font-size: 14px;
+  margin-left: 6px; /* controls distance from text */
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
